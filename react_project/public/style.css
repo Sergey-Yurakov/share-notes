@@ -1,0 +1,44 @@
+html, body, #root {
+    height: 100%;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+footer.page-footer{
+    flex-shrink: 0;
+}
+.hide {
+    display: none;
+}
+
+.navbar {
+    padding: .5rem;
+}
+
+footer {
+    color: #fff;
+}
+
+.text {
+    padding: 20px;
+}
+
+
+.button-list {
+    list-style-type: none;
+}
+
+.button-list li {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
