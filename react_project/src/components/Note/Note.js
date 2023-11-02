@@ -6,7 +6,6 @@ export const Note = () => {
     let { noteURL } = useParams();
 
     const [noteText, setNoteText] = useState('');
-    const [isError, setIsError] = useState(false);
     const [lineClass, setLineClass] = useState('hide');
     const [formClass, setFormClass] = useState('hide');
     const [errorClass, setErrorClass] = useState('hide');
@@ -28,7 +27,6 @@ export const Note = () => {
                         setLineClass('');
                         setFormClass('hide');
                         setErrorClass('hide');
-                        setIsError(false);
                     } else if (!response.result) {
                         setLineClass('hide');
                         setFormClass('hide');
@@ -37,7 +35,6 @@ export const Note = () => {
                 })
                 .catch(e => {
                     console.log(`Возникла ошибка - ${e}`);
-                    setIsError(true);
                 });
         } else {
             setLineClass('hide');
@@ -57,21 +54,6 @@ export const Note = () => {
         noteURL = url;
         window.location.href = env.url + '/' + url;
     };
-
-    if (isError) {
-        return (
-            <div className="container">
-                <div className="row content">
-                    <div className="col-12 mt-3">
-                        <h5>Упс, что-то пошло не так =(</h5>
-                        <button onClick={() => (window.location.href = env.url)} className="btn btn-info mt-2">
-                            Искать другой note
-                        </button>
-                    </div>
-                </div>
-            </div>
-        );
-    }
 
     return (
         <div className="container">
