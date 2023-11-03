@@ -27,7 +27,7 @@ export const Note = () => {
                         setLineClass('');
                         setFormClass('hide');
                         setErrorClass('hide');
-                    } else if (!response.result) {
+                    } else {
                         setLineClass('hide');
                         setFormClass('hide');
                         setErrorClass('');
@@ -77,7 +77,7 @@ export const Note = () => {
                             <h4 className="alert-heading">Note: {noteURL}</h4>
                             <div>{noteText}</div>
                             <hr />
-                            {/*<p className="mb-0">Внимание! Скопируйте заметку. После показа заметка будет удалена!</p>*/}
+                            <p className="mb-0">Внимание! Скопируйте заметку. После показа заметка будет удалена!</p>
                         </div>
                         <div className="text-right">
                             <button onClick={() => (window.location.href = env.url)} className="btn btn-primary">
